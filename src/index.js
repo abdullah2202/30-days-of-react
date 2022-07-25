@@ -1,17 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const jsxElement = <h1>This is a JSX Element</h1>;
+const rootElement = document.getElementById('root');
+
+const title = <h2>Getting Started React</h2>;
+
+const header = (
+  <header>
+    <h1>Welcome to 30 Days React</h1>
+    <h2>Getting Started React</h2>
+    <h3>Javascript Library</h3>
+  </header>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(header, rootElement);
+
