@@ -6,13 +6,24 @@ const welcome = 'Welcome to 30 Days of React'
 const title = 'Getting Started with React'
 const subtitle = 'Javascript Library'
 const author = {
-  firstName: 'Mohammed',
-  lastName: 'Abdullah',
+  firstName: 'Ahmed',
+  lastName: 'Ali',
 }
+const yearBorn = 1820
+const currentYear = new Date().getFullYear()
+const age = currentYear - yearBorn
+const personAge = (
+  <p>
+    {' '}
+    {author.firstName} {author.lastName} is {age} years old
+  </p>
+)
 const date = 'Jul 28, 2022'
 const user = (
-  <div>
-    <img src={avatarImage} alt='Avatar Image' width='200px' />
+  <div className='avatar-card'>
+    <img src={avatarImage} alt='Avatar Image' className='avatar-image'/>
+    <div className='avatar-name'><span>{author.firstName} {author.lastName}</span></div>
+    <div className='avatar-age'><span>{age}</span></div>
   </div>
 )
 
@@ -39,15 +50,7 @@ const result = (
   </p>
 )
 
-const yearBorn = 1820
-const currentYear = new Date().getFullYear()
-const age = currentYear - yearBorn
-const personAge = (
-  <p>
-    {' '}
-    {author.firstName} {author.lastName} is {age} years old
-  </p>
-)
+
 
 const techs = ['HTML', 'CSS', 'JavaScript']
 const techsFormatted = techs.map((tech) => <li>{tech}</li>)
