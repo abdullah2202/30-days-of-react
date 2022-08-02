@@ -41,6 +41,10 @@ const header = (
   </header>
 )
 
+const Header = () => {
+  return header
+}
+
 const numOne = 3
 const numTwo = 2
 
@@ -55,7 +59,7 @@ const result = (
 const techs = ['HTML', 'CSS', 'JavaScript']
 const techsFormatted = techs.map((tech) => <li>{tech}</li>)
 
-const main = (
+const Main = () => (
   <main>
     <div className='main-wrapper'>
       <p>Prerequisite to get started{' '}
@@ -76,7 +80,7 @@ const main = (
 
 const copyRight = 'Copyright 2022'
 
-const footer = (
+const Footer = () => (
   <footer>
     <div className='footer-wrapper'>
       <p>{copyRight}</p>  
@@ -84,14 +88,40 @@ const footer = (
   </footer>
 )
 
-const app = (
-  <div>
-    {header}
-    {main}
-    {footer}
+
+const hexaColor = () => {
+  let str = '0123456789abcdef'
+  let color = ''
+  for(let i=0; i<6; i++){
+    let index = Math.floor(Math.random() * str.length)
+    color += str[index]
+  }
+  return '#' + color
+}
+
+let hexa_color = hexaColor()
+
+const hexaStyles = {
+  width: 100,
+  height: 100,
+  background: hexa_color,
+  padding: 10,
+  fontWeight: 'bold',
+}
+
+const HexaColor = () => <div style={hexaStyles}>{hexa_color}</div>
+
+
+const App = () => (
+  <div className='app'>
+    <HexaColor />
+    <Header />
+    <Main />
+    <Footer />
+    
   </div>
 )
 
 const rootElement = document.getElementById('root')
-ReactDOM.render(app, rootElement)
+ReactDOM.render(<App />, rootElement)
 
